@@ -1,25 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <h2>The moon is updated {{ timesUpdated }} times.</h2>
+    <button @click="updateMoonPhase">Force moon phase.</button>
+    <button @click="startMoonPhases">Start moon phases.</button>
+    <button @click="stopMoonPhases">Stop moon phases.</button>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import { useMoonPhases } from "./composition/useMoonPhases";
+import { defineComponent } from "vue";
 
-export default Vue.extend({
+export default defineComponent({
   name: "App",
-  components: {
-    HelloWorld
+  setup() {
+    const {
+      timesUpdated,
+      updateMoonPhase,
+      startMoonPhases,
+      stopMoonPhases
+    } = useMoonPhases(200);
+
+    return { timesUpdated, updateMoonPhase, startMoonPhases, stopMoonPhases };
   }
 });
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
