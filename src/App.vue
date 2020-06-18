@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <h2>The moon is updated {{ timesUpdated }} times.</h2>
-    <button @click="updateMoonPhase">Force moon phase.</button>
-    <button @click="startMoonPhases">Start moon phases.</button>
-    <button @click="stopMoonPhases">Stop moon phases.</button>
+    <button class="button" @click="updateMoonPhase">Force moon phase</button>
+    <button class="button" @click="startMoonPhases">Start moon phases</button>
+    <button class="button" @click="stopMoonPhases">Stop moon phases</button>
   </div>
 </template>
 
@@ -33,7 +33,11 @@ export default defineComponent({
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #2e2e2e;
   margin-top: 60px;
+
+  .button {
+    margin: 0 4px 10px;
+  }
 }
 </style>
