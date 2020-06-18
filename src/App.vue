@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2>The moon is updated {{ timesUpdated }} times.</h2>
+    <h2>The moon has phased {{ timesUpdated }} times.</h2>
     <button class="button" @click="updateMoonPhase">Force moon phase</button>
     <button class="button" @click="startMoonPhases">Start moon phases</button>
     <button class="button" @click="stopMoonPhases">Stop moon phases</button>
